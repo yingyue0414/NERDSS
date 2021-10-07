@@ -4,7 +4,7 @@
 Documentation for NERDSS - Continuum Membrane
 =============================================
 
-Continuum membrane is tool in NERDSS to extend the scope of the model to non-linear membranes with triangular mesh. 
+Continuum membrane is tool in NERDSS to extend the scope of the model to non-linear membranes established with triangular mesh and optimized using and energy function. 
 
 Installation
 ------------
