@@ -9,7 +9,7 @@ Continuum membrane is tool in NERDSS to extend the scope of the model to non-lin
 Installation
 ------------
 
-Continuum membrane is included in NERDSS. Please refer to `User guide` for NERDSS.
+Continuum membrane is included in NERDSS. Please refer to `User guide`_ for NERDSS.
 
 Compile Continuum Membrane
 --------------------------
@@ -35,4 +35,4 @@ Fu, Y., Yogurtcu, O.N., Kothari, R., Thorkelsdottir, G., Sodt, A.J. & Johnson, M
 2. Membrane energies and insertion
 Fu, Y., Zeno, W., Stachowiak, J. & Johnson, M.E. A continuum membrane model predicts curvature sensing by helix insertion. Submitted (2021) Available on bioRxiv:`https://www.biorxiv.org/content/10.1101/2021.04.22.440963v1.full`_
 
-.. _`User guide: https://github.com/mjohn218/NERDSS/blob/master/NERDSS_USER_GUIDE.pdf`
+.. _`User guide`: https://github.com/mjohn218/NERDSS/blob/master/NERDSS_USER_GUIDE.pdf
