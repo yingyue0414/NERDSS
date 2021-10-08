@@ -18,10 +18,15 @@ The code of continuum membrane model is programmed in C++ with Armadillo library
 The main code is ‘continuummodel_maincode.cpp’, and ‘funcitons_file1.cpp’ and ‘functions_file2.cpp’ list all the functions this membrane utilize. Specifically, the functions for setting up triangular mesh are listed ‘functions_file2.cpp’, and the functions for calculating the system energy and the vertex force are defined in ‘functions_file1.cpp’.
 
 To compile the file:
+
 .. code-block:: console
+
    g++ continuummodel_maincode.cpp -larmadillo -fopenmp -o out
+   
 Then to run the code:
+
 .. code-block:: console
+
    ./out
 
 Cite Continuum Membrane
