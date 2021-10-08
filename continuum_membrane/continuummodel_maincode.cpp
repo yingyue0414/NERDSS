@@ -15,25 +15,27 @@ using namespace std;
 using namespace arma;
 
 // basic parameters
-double r   = 20.0;                     // sphere radius, nm
-double l   = 2.0;                      // triangular side length, nm
-double C0  = -0.1;                      // spontaneous curvature of insertion
-double c0  = 0.0;                      // spontaneous curvature of membrane
-double ds  = 0.0;                      // insertion area
-double ci  = 1.0;                      // area constraint coefficient
-double miu = 1.0;                      // volume constraint coefficient
-double kc  = 20*4.17;                  // pN.nm  
-double us  = 250.0;                  // pN/nm, area stretching modulus; 0.5*us*(ds)^2/s0;
-double uv  = 1.0*kc;               // coefficeint of the volume constraint, 0.5*uv*(dv)^2/v0;
-double k   = (1.0e1)*kc;             // coefficient of the regulerization constraint, 
-double K   = 2.0*k;                  // spring constant for insertion zones
+// @TODO build IO flow
+
+double r_sphere      = 20.0;                      // sphere radius, nm
+double l_mesh_side   = 2.0;                       // triangular side length, nm
+double c0_insertion  = -0.1;                      // spontaneous curvature of insertion
+double c0_membrane  = 0.0;                       // spontaneous curvature of membrane
+double ds_insertion  = 0.0;                       // insertion area
+double ci_area_constraint  = 1.0;                       // area constraint coefficient
+double miu_volume_constraint = 1.0;                       // volume constraint coefficient
+double kc  = 20*4.17;                   // pN.nm  
+double us  = 250.0;                     // pN/nm, area stretching modulus; 0.5*us*(ds_insertion)^2/s0;
+double uv  = 1.0*kc;                    // coefficeint of the volume constraint, 0.5*uv*(dv)^2/v0;
+double k   = (1.0e1)*kc;                // coefficient of the regulerization constraint, 
+double K   = 2.0*k;                     // spring constant for insertion zones
 double gama_shape = 0.2;
 double gama_area = 0.2;
 bool   isInsertionAreaConstraint = true;
 double sigma = 0.0;              // 2*sigma is the lengthscale of decaying spontaneous curvature
 bool   isAdditiveScheme = true; // additve scheme for the expansion of spontaneous curvature
 int    GaussQuadratureN = 2; 
-int    N   = 1e5;                      // total step of iteration
+int    Num_iteration   = 1e5;                      // total step of iteration
 double criterion_force = 1.0e-2;
 double criterion_S = 1e-5;
 double criterion_V = 1e-5;
@@ -47,7 +49,7 @@ int main() {
     double meanL = 0.0;     // the mean value of the triangular side length.
     Mat<double> vertex(12,3);  // vertex position
     Mat<int> face(20,3);    // face and its surrounding vertex
-    setsphere_Loop_scheme(vertex, face, meanL, r, l);
+    setsphere_Loop_scheme(vertex, face, meanL, r_sphere, l_mesh_side);
     ///////////////////////////////////////
     // read a structure file
     //char name[32] = "vertex_read.csv";
@@ -102,7 +104,7 @@ int main() {
     double V0 = 4.0/3.0*M_PI*pow(R,3.0); // total volume 
     Param param;
     param.kc = kc; param.us = us/S0; param.uv = uv/V0; param.k = k; param.K = K; 
-    param.C0 = C0; param.c0 = c0; param.meanL = meanL; param.gama_shape = gama_shape; param.gama_area = gama_area; param.sigma = sigma; param.GaussQuadratureN = GaussQuadratureN;
+    param.c0_insertion = c0_insertion; param.c0_membrane = c0_membrane; param.meanL = meanL; param.gama_shape = gama_shape; param.gama_area = gama_area; param.sigma = sigma; param.GaussQuadratureN = GaussQuadratureN;
     param.isInsertionAreaConstraint =isInsertionAreaConstraint;
     param.isAdditiveScheme = isAdditiveScheme; 
     param.s0 = 2.0/insertionpatch.n_cols; 
@@ -117,11 +119,11 @@ int main() {
     
     Energy_and_Force(vertex, vertexref, vertexi_nearby, vertexi_face, face, face_ring_vertex, param, spontcurv, insertionpatch, Isinsertionpatch, energy, force, deformnumbers, gqcoeff, shape_functions);
 
-    mat Energy(N,6); Energy.fill(0); Energy.row(0) = energy;
+    mat Energy(Num_iteration,6); Energy.fill(0); Energy.row(0) = energy;
     vec forcescale = force_scale(force);
-    vec MeanForce(N); MeanForce.fill(0); MeanForce(0) = mean(forcescale);
-    vec totalarea(N); totalarea(0) = param.S;
-    vec totalvolume(N); totalvolume(0) = param.V;
+    vec MeanForce(Num_iteration); MeanForce.fill(0); MeanForce(0) = mean(forcescale);
+    vec totalarea(Num_iteration); totalarea(0) = param.S;
+    vec totalvolume(Num_iteration); totalvolume(0) = param.V;
 
     mat force0 = force; 
     mat force1(force.n_rows,3);
@@ -139,10 +141,10 @@ int main() {
     bool isCriteriaSatisfied = false; 
     bool updateReference = true;
     int i = 0;
-    while ( isCriteriaSatisfied == false && i < N-1){
+    while ( isCriteriaSatisfied == false && i < Num_iteration-1){
        // updates 
        if ( i == 1 || i%50 == 0 ){
-           a0 = l/max(force_scale(s0)); //a0 = 1; 
+           a0 = l_mesh_side/max(force_scale(s0)); //a0 = 1; 
        }else{
            a0 = a0 * 2e1;
        } 
