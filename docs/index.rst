@@ -58,4 +58,4 @@ Fu, Y., Zeno, W., Stachowiak, J. & Johnson, M.E. A continuum membrane model pred
 .. _`User guide`: https://github.com/mjohn218/NERDSS/blob/master/NERDSS_USER_GUIDE.pdf
 .. _`Armadillo`: http://arma.sourceforge.net/
 .. _`10.1063/1.5120516`: https://pubmed.ncbi.nlm.nih.gov/31575182/
-.. _`https://www.biorxiv.org/content/10.1101/2021.04.22.440963v1.full`: `https://www.biorxiv.org/content/10.1101/2021.04.22.440963v1.full`
+.. _`biorxiv.org/content/10.1101/2021.04.22.440963v1.full`: `https://www.biorxiv.org/content/10.1101/2021.04.22.440963v1.full`
