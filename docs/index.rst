@@ -53,9 +53,9 @@ If you use or modify continuum membrane model, in addition to citing NERDSS, ple
 Fu, Y., Yogurtcu, O.N., Kothari, R., Thorkelsdottir, G., Sodt, A.J. & Johnson, M.E. (2019) An implicit lipid model for efficient reaction-diffusion simulations of protein binding to surfaces of arbitrary topology. *J Chem Phys.* 151 (12), 124115. doi:`10.1063/1.5120516`_
 
 2. Membrane energies and insertion
-Fu, Y., Zeno, W., Stachowiak, J. & Johnson, M.E. A continuum membrane model predicts curvature sensing by helix insertion. Submitted (2021) Available on bioRxiv:`biorxiv.org/content/10.1101/2021.04.22.440963v1.full`_
+Fu, Y., Zeno, W., Stachowiak, J. & Johnson, M.E. A continuum membrane model predicts curvature sensing by helix insertion. Submitted (2021) Available on `bioRxiv`_
 
 .. _`User guide`: https://github.com/mjohn218/NERDSS/blob/master/NERDSS_USER_GUIDE.pdf
 .. _`Armadillo`: http://arma.sourceforge.net/
 .. _`10.1063/1.5120516`: https://pubmed.ncbi.nlm.nih.gov/31575182/
-.. _`biorxiv.org/content/10.1101/2021.04.22.440963v1.full`: `https://www.biorxiv.org/content/10.1101/2021.04.22.440963v1.full`
+.. _`biorxiv`: `https://www.biorxiv.org/content/10.1101/2021.04.22.440963v1.full`
