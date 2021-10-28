@@ -17,7 +17,7 @@ Continuum membrane is included in NERDSS. Please refer to `User guide`_ for NERD
 
 2. Compile Continuum Membrane
 --------------------------
-The main code of continuum membrane model is ‘continuummodel_maincode.cpp’. ‘funcitons_file1.cpp’ and ‘functions_file2.cpp’ list all the functions utilized by the model membrane. Specifically, the functions for setting up triangular mesh are listed ‘functions_file2.cpp’. The functions for calculating the system energy and the vertex force are defined in ‘functions_file1.cpp’.
+The main code of continuum membrane model is ``continuummodel_maincode.cpp``. ``funcitons_file1.cpp`` and ``functions_file2.cpp`` list all the functions utilized by the model membrane. Specifically, the functions for setting up triangular mesh are listed ``functions_file2.cpp``. The functions for calculating the system energy and the vertex force are defined in ``functions_file1.cpp``.
 
 Use the following code to compile the file. Note 'output_file' can be renamed accordingly.
 
@@ -47,19 +47,37 @@ Then to run the code:
 3. Input Parameters
 ----------------------
 
-The input file is `continuum_membrane/input.params`. Parameters are broken down to geometric parameters, physical properties, insertion mode, and advanced parameters.
+The input file is ``continuum_membrane/input.params``. Parameters are broken down to geometric parameters, physical properties, insertion mode, and advanced parameters.
 
-+------------+------------+---------------+
-|        Parameters       | Description   |
-+============+============+===============+
-| Physical   | column 2   | column 3      |
-+ Properties +------------+---------------+
-|            | Cells may span columns.    |
-+------------+------------+---------------+
-| body row 3 | Cells may  | - Cells       |
-+------------+ span rows. | - contain     |
-| body row 4 |            | - blocks.     |
-+------------+------------+---------------+
++------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter                                                  | Description                                                                                                                                                                          |
++----------------------+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Geometric Parameters | ``lMeshSide``                       | Target side length of the triangular mesh (nm). This only servers as a reference scale and the mesh side length set up by the algorithm may vary.                                    |
+|                      +--------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                      | Sphere model | ``isSphere``         | Set ``true`` to enable sphere mode.                                                                                                                                                  |
+|                      |              +----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                      |              | ``rSphere``          | Target radius of sphere (nm). This is the radius of spherical frame to set up the triangular mesh. The radius of the resulting membrane represented by the triangular mesh may vary. |
++----------------------+--------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Physical Properties  | ``c0Insertion``                     | Curvature of the membrane at the insertion area.                                                                                                                                     |
+|                      +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                      | ``c0Membrane``                      | Spontaneous curvature of the membrane.                                                                                                                                               |
+|                      +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                      | ``kcMembraneBending``               | Membrane bending constant in the energy function (pN*nm).                                                                                                                            |
+|                      +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                      | ``usMembraneStretching``            | Membrane streching modulus in the energy function (pN/nm).                                                                                                                           |
+|                      +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                      | ``uvVolumeConstraint``              | Volume constraint coefficient in the energy function (pN/nm^2).                                                                                                                      |
++----------------------+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Insertion Mode       | ``isInsertionIncluded``             | Set ``true`` to include insertion.                                                                                                                                                   |
+|                      +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                      | ``sigma``                           | 2*sigma (nm) is the length scale of decaying insertion curvature or in other words expansion of non-spontaneous curvature due to insertion.                                          |
++----------------------+--------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Advacned Parameters  | Optimization | ``numMaxIterations`` | Number of maximum iterations allowed.                                                                                                                                                |
+|                      |              +----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                      |              | ``criterionForce``   | Force criteria to determine if adequate optimization is accomplished (pN).                                                                                                           |
+|                      +--------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                      | Algorithm    | ``gaussQuadratureN`` | Default Gauss Quadrature used in integral approximation.                                                                                                                             |
++----------------------+--------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
