@@ -51,7 +51,9 @@ The input file is ``continuum_membrane/input.params``. Parameters are broken dow
 
 +==================================================+==================================================================================+
 | Parameter                                        | Description                                                                      |
-+==================================================+==================================================================================+
++--------------------------------------------------+----------------------------------------------------------------------------------+
+| Parameter                                        | Description                                                                      |
++------------+-------------------------------------+----------------------------------------------------------------------------------+
 | Geometric  | ``lMeshSide``                       | Target side length of the triangular mesh (nm).                                  |
 | Parameters |                                     | This only servers as a reference scale.                                          |
 |            |                                     | The mesh side length set up by the algorithm may vary.                           |
@@ -82,7 +84,7 @@ The input file is ``continuum_membrane/input.params``. Parameters are broken dow
 |            |              | ``criterionForce``   | Force criteria to determine if adequate optimization is accomplished (pN).       |
 |            +--------------+----------------------+----------------------------------------------------------------------------------+
 |            | Algorithm    | ``gaussQuadratureN`` | Default Gauss Quadrature used in integral approximation.                         |
-+============+==============+======================+==================================================================================+
++------------+--------------+----------------------+----------------------------------------------------------------------------------+
 
 4. Triangular Mesh Setup
 -----------------------
