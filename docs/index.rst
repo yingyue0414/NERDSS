@@ -52,24 +52,15 @@ The input file is `continuum_membrane/input.params`. Parameters are broken down 
 +------------+------------+---------------+
 |        Parameters       | Description   |
 +============+============+===============+
-| Physical   | column 2   | column 3  |
-+ Properties +------------+-----------+
-|            | Cells may span columns.|
-+------------+------------+-----------+
-| body row 3 | Cells may  | - Cells   |
-+------------+ span rows. | - contain |
-| body row 4 |            | - blocks. |
-+------------+------------+-----------+
+| Physical   | column 2   | column 3      |
++ Properties +------------+---------------+
+|            | Cells may span columns.    |
++------------+------------+---------------+
+| body row 3 | Cells may  | - Cells       |
++------------+ span rows. | - contain     |
+| body row 4 |            | - blocks.     |
++------------+------------+---------------+
 
-==========  ==========  ========================
-      Parameter              Description
-======================  ========================
-
-False  False  False
-True   False  True
-False  True   True
-True   True   True
-=====  =====  ======
 
 
 Cite Continuum Membrane
