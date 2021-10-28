@@ -49,8 +49,6 @@ Then to run the code:
 
 The input file is ``continuum_membrane/input.params``. Parameters are broken down to geometric parameters, physical properties, insertion mode, and advanced parameters.
 
-+==================================================+==================================================================================+
-| Parameter                                        | Description                                                                      |
 +--------------------------------------------------+----------------------------------------------------------------------------------+
 | Parameter                                        | Description                                                                      |
 +------------+-------------------------------------+----------------------------------------------------------------------------------+
