@@ -95,7 +95,7 @@ The goal for the continuum membrane model is to minimize the membrane energy eva
 
 .. math::
 
-   E = \int_S \\frac{1}{2}\\kappa (2H-C_0)^2 dS + \frac{1}{2} u_s (\frac{S-S_0}{S_0})^2 + \frac{1}{2} u_v (\frac{V-V_0}{V_0})^2
+   E = \int_S \frac{1}{2}\kappa (2H-C_0)^2 dS + \frac{1}{2} u_s (\frac{S-S_0}{S_0})^2 + \frac{1}{2} u_v (\frac{V-V_0}{V_0})^2
 
 6. Cite Continuum Membrane
 -----------------------
