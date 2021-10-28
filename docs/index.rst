@@ -6,7 +6,7 @@ Documentation for NERDSS - Continuum Membrane
 
 Continuum membrane is tool in NERDSS to extend the scope of the model to non-linear membranes established with triangular mesh and optimized using and energy function. 
 
-Installation
+1. Installation
 ------------
 
 Continuum membrane is included in NERDSS. Please refer to `User guide`_ for NERDSS. Additional dependencies for continuum membrane model are:
@@ -15,7 +15,7 @@ Continuum membrane is included in NERDSS. Please refer to `User guide`_ for NERD
 #. `Armadillo`_ (linear algebra package)
 #. OpenMP (only required in need of parallelization)
 
-Compile Continuum Membrane
+2. Compile Continuum Membrane
 --------------------------
 The main code of continuum membrane model is ‘continuummodel_maincode.cpp’. ‘funcitons_file1.cpp’ and ‘functions_file2.cpp’ list all the functions utilized by the model membrane. Specifically, the functions for setting up triangular mesh are listed ‘functions_file2.cpp’. The functions for calculating the system energy and the vertex force are defined in ‘functions_file1.cpp’.
 
@@ -43,6 +43,23 @@ Then to run the code:
 .. code-block:: console
 
    ./output_file
+
+3. Input File
+----------------------
+
+The input file is `continuum_membrane/input.params`. Parameters are broken down to geometric parameters, physical properties, insertion mode, and advanced parameters.
+
+=====  =====  ======
+   Inputs     Output
+------------  ------
+  A      B    A or B
+=====  =====  ======
+False  False  False
+True   False  True
+False  True   True
+True   True   True
+=====  =====  ======
+
 
 Cite Continuum Membrane
 -----------------------
