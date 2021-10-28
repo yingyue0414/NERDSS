@@ -82,7 +82,7 @@ The input file is ``continuum_membrane/input.params``. Parameters are broken dow
 |            |              | ``criterionForce``   | Force criteria to determine if adequate optimization is accomplished (pN).       |
 |            +--------------+----------------------+----------------------------------------------------------------------------------+
 |            | Algorithm    | ``gaussQuadratureN`` | Default Gauss Quadrature used in integral approximation.                         |
-+------------+--------------+----------------------+----------------------------------------------------------------------------------+
++============+==============+======================+==================================================================================+
 
 4. Triangular Mesh Setup
 -----------------------
