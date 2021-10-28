@@ -88,6 +88,8 @@ The first step for continuum membrane is to set up the triangular mesh model to 
 
 The goal for the continuum membrane model is to minimize the membrane energy evaluated by the energy function, which is the sum of membrane bending energy, area constraint energy (or elastic area change energy), and volume constraint energy:
 
+:math:`\\frac{1}{2}`
+
 .. math::
 
    dE = \frac{1}{2}\kappa (2H-C_0)^2 dS
