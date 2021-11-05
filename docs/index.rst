@@ -98,6 +98,7 @@ The goal for the continuum membrane model is to minimize the membrane energy eva
    E = E_B + E_S + E_V = \int_S \frac{1}{2}\kappa (2H-C_0)^2 dS + \frac{1}{2} \mu_S \frac{(S-S_0)^2}{S_0} + \frac{1}{2} /mu_V \frac{(V-V_0)^2}{V_0}
 
 where:
+
 - :math:`\kappa` : ``kcMembraneBending``
 - :math:`H` : mean membrane culvature
 - :math:`C_0` : ``c0Membrane``
