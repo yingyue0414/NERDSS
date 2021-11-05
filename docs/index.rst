@@ -108,6 +108,7 @@ where:
 - :math:`\mu_V` : volume constraint coefficient ``uvVolumeConstraint``
 - :math:`V` : global volume
 - :math:`V_0` : target volume
+   
 
 6. Cite Continuum Membrane
 -----------------------
