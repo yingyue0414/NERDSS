@@ -19,7 +19,7 @@ Continuum membrane is included in NERDSS. Please refer to `User guide`_ for NERD
 --------------------------
 The main code of continuum membrane model is ``continuummodel_maincode.cpp``. ``funcitons_file1.cpp`` and ``functions_file2.cpp`` list all the functions utilized by the model membrane. Specifically, the functions for setting up triangular mesh are listed ``functions_file2.cpp``. The functions for calculating the system energy and the vertex force are defined in ``functions_file1.cpp``.
 
-Use the following code to compile the file. Note 'output_file' can be renamed accordingly.
+Use the following code to compile the file. Note ``output_file`` can be renamed accordingly.
 
 .. code-block:: console
 
