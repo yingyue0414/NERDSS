@@ -93,7 +93,7 @@ The goal for the lowest energy search model is to minimize the membrane energy e
 
 where:
 
-- :math:`\kappa` : Membrane bending constant ``kcMembraneBending``
+- :math:`\kappa` : membrane bending constant ``kcMembraneBending``
 - :math:`H` : mean membrane culvature
 - :math:`C_0` : spontaneous curvature of the membrane ``c0Membrane``
 - :math:`\mu_S` : membrane streching modulus ``usMembraneStretching``
@@ -110,7 +110,14 @@ Membrane Brownian Dynamics model runs a step-wise simulation of the moving membr
 
 .. math::
 
-   \delta X = -\frac{D\delta t}{k_b T} \nabla E + \sqrt{2D\delta t} N(0,1)
+   \Delta X = -\frac{D\Delta t}{k_b T} \nabla E + \sqrt{2D\Delta t} (N(0,1))
+
+where:
+
+- :math:`\Delta X`: displacement of point on limit surface
+- :math:`D`: diffusion constant of the membrane
+- :math:`\Delta t`: time step
+- :math:`N(0,1)`: standard normal distribution
 
 Note that the displacement of membrane according to the equation above is performed on the limit surface, not the control mesh.
 In this case, a conversion matrix helps to convert between triangular mesh and limit surface, as currently the points on the limit surface
@@ -119,7 +126,10 @@ represented by the mesh point are chosen to represent the surface.
 .. math::
 
    M_{s} = C M_{m}
-   M_{m} = C M_{s}
+
+.. math::
+
+   M_{m} = C^{-1} M_{s}
 
 7. Boundary Conditions
 -----------------------
